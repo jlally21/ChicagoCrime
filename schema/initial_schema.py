@@ -43,8 +43,8 @@ with open('/home/jlally/Chicago/data/2015murdersonlyoutput.csv','r') as fin: # `
 c.execute('DELETE FROM offense')
 c.executemany('INSERT OR IGNORE INTO offense (offenseID, primary_type, primary_description, arrest) VALUES (?, ?, ?, ?);', to_db)
 
-#c.execute('SELECT * FROM offense')
-#print(c.fetchall())
+c.execute('SELECT * FROM offense')
+print(c.fetchall())
 
 
 # Drop an existing incident table
@@ -63,8 +63,8 @@ with open('/home/jlally/Chicago/data/2015murdersonlyoutput.csv','r') as fin: # `
 c.execute('DELETE FROM incident')
 c.executemany('INSERT OR IGNORE INTO incident (caseID, date, locationID, offenseID) VALUES (?, ?, ?, ?);', to_db)
 
-c.execute('SELECT * FROM incident')
-print(c.fetchall())
+#c.execute('SELECT * FROM incident')
+#print(c.fetchall())
 
 
 
