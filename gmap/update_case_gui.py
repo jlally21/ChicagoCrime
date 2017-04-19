@@ -100,7 +100,7 @@ class Ui_update_dia(object):
         self.groupBox_2.setTitle(_translate("update_dia", "What to Change", None))
         self.radioButton_9.setText(_translate("update_dia", "Latitude", None))
         self.radioButton.setText(_translate("update_dia", "Date", None))
-        self.radioButton_6.setText(_translate("update_dia", "Secondary Descripgion", None))
+        self.radioButton_6.setText(_translate("update_dia", "Secondary Description", None))
         self.radioButton_4.setText(_translate("update_dia", "Block", None))
         self.radioButton_7.setText(_translate("update_dia", "Ward", None))
         self.radioButton_5.setText(_translate("update_dia", "Primary Description", None))
