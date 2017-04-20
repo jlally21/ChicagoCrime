@@ -15,7 +15,7 @@ c.execute('''CREATE TABLE location
              (locationID text PRIMARY KEY, latitude text, longitude text, block text, locationdescription text, beat int, ward int)''')
 
 # Populate the location table
-with open('/home/jlally/Chicago/data/2015murdersonlyoutput.csv','r') as fin: # `with` statement available in 2.5+
+with open('/home/jlally/Chicago/ChicagoCrime/data/2015murdersonlyoutput.csv','r') as fin: # `with` statement available in 2.5+
     # csv.DictReader uses first line in file for column headings by default
     dr = csv.DictReader(fin) # comma is default delimiter
     to_db = [(i['locationID'], i['Latitude'], i['Longitude'], i['Block'], i['Location Description'], i['Beat'], i['Ward']) for i in dr]
@@ -35,7 +35,7 @@ c.execute('''CREATE TABLE offense
              (offenseID text PRIMARY KEY, primary_type text, primary_description text, arrest text, domestic text, UNIQUE(offenseID, primary_type))''')
 
 # Populate the offense table
-with open('/home/jlally/Chicago/data/2015murdersonlyoutput.csv','r') as fin: # `with` statement available in 2.5+
+with open('/home/jlally/Chicago/ChicagoCrime/data/2015murdersonlyoutput.csv','r') as fin: # `with` statement available in 2.5+
     # csv.DictReader uses first line in file for column headings by default
     dr = csv.DictReader(fin) # comma is default delimiter
     to_db = [(i['offenseID'], i['Primary Type'], i['Description'], i['Arrest'], i['Domestic']) for i in dr]
@@ -57,7 +57,7 @@ c.execute('''CREATE TABLE incident
 
 
 # Populate the incident table
-with open('/home/jlally/Chicago/data/2015murdersonlyoutput.csv','r') as fin: # `with` statement available in 2.5+
+with open('/home/jlally/Chicago/ChicagoCrime/data/2015murdersonlyoutput.csv','r') as fin: # `with` statement available in 2.5+
     # csv.DictReader uses first line in file for column headings by default
     dr = csv.DictReader(fin) # comma is default delimiter
     to_db = [(i['ID'], i['Date'], i['locationID'], i['offenseID']) for i in dr]
