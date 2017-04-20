@@ -1,8 +1,6 @@
-# README
-
 Steps for setting up VM
-- download vmware
-- new virtual machine (typical)
+- Download VMware
+- Create a new virtual machine (use recommended/default settings)
 - installer disk image file: ubuntu-14.04.5
 - create user name, password, etc. (20 gb, default settings)
 
@@ -12,15 +10,18 @@ sudo apt-get update
 sudo apt-get -y upgrade (takes a while)
 sudo apt-get install -y python3-pip
 sudo apt-get install vim
-// pip3 install numpy --user (takes a while, optional?)
-// pip3 install pandas --user (takes a while, optional?)
-pip3 install bokeh --user 
-pip3 install googlemaps
+pip3 install pandas --user (takes a while)
+pip3 install bokeh --user (takes a while)
+sudo pip3 install googlemaps
+sudo pip3 install gmplot
+sudo apt-get install python-pyqt4
+sudo apt-get install sqlite3
 
 Clone and Build CSV file
 At filepath /home/jlally/
 create a directory Chicago and cd into it
 git clone https://github.com/jlally21/ChicagoCrime
+cd into ChicagoCrime
 cd  into data directory
 make sure 2015murdersonlyoutput.csv does not exist, if it does exist delete it
 make sure 2015murdersonly.csv does exist
@@ -29,10 +30,11 @@ make sure 2015murdersonlyoutput.csv now exists
 
 Create and Populate Database
 cd into schema directory
+Vim initial_schema.py, the file path should be '/home/jlally/Chicago/ChicagoCrime/data/2015murdersonlyoutput.csv'
 remove ChicagoMurders2015.db if it exists in the schema directory
 python3 initial_schema.py
 now ChicagoMurders2015.db should exist in the schema directory
-cp ChicagoMurders2015.db ../gmaps/   (this copies the ChicagoMurders2015.db into gmap directory)
+cp ChicagoMurders2015.db ../gmap/   (this copies the ChicagoMurders2015.db into gmap directory)
 
 Launch the Application
 cd into gmap directory
